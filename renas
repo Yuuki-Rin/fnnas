@@ -515,6 +515,8 @@ extract_fnnas() {
     rm -rf boot/*
     # Delete the kernel files and replace it later
     rm -rf usr/lib/modules/*
+    # Delete apt cache files
+    rm -rf var/cache/apt/archives/* var/cache/man/*
     # Delete the symbolic link files and relink it later
     rm -rf bin lib sbin var/lock var/run
     # Delete unused and duplicate scripts
