@@ -83,7 +83,7 @@ expansion_partition() {
         printf 'Yes\n\n' | parted ---pretend-input-tty /dev/${DISK_NAME} resizepart 2 64GiB
     else
         echo -e "${INFO} Expanding partition to 100% (Full Disk)..."
-        # If disk <= 64GiB: Expand to 100%
+        # If disk <= 64GiB: Expand to 20GiB
         printf 'Yes\n-1\n' | parted ---pretend-input-tty /dev/${DISK_NAME} resizepart 2 100%
     fi
 
